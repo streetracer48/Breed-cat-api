@@ -5,7 +5,7 @@ exports.breedById = function(req, res) {
     const breedId = req.params.id;
   
     Breed.findById(breedId).exec(function(err, foundBreed) {
-  
+        console.log(breedId)
       if (err) {
         return res.status(422).send({errors: normalizeErrors(err.errors)});
       }
