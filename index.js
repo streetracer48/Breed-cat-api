@@ -3,9 +3,13 @@ const bodyParser= require('body-parser');
 const connectDB =require('./config/dev');
 
 const breedRoutes = require('./routes/breed');
+const cors = require('cors')
 
 const app = express();
-
+app.use(cors());
+app.use(cors({
+     credentials: true,
+   }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
